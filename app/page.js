@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronRight, Users, Sprout, Heart, Phone, Mail, MapPin, Leaf, Sun, Droplets } from 'lucide-react';
 
@@ -138,8 +139,8 @@ export default function AsproinpalWebsite() {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-3xl mx-auto animate-[slideUp_0.8s_ease-out_0.2s_both]">
-              Somos una asociación dedicada al fortalecimiento de las comunidades indígenas y campesinas, 
-              preservando nuestras tradiciones mientras cultivamos un futuro sostenible.
+              Organización conformada por 100 familias indígenas del pueblo Zenú y campesinos de San Antonio de Palmito, Sucre. 
+              Promovemos el desarrollo agroecológico sostenible y el fortalecimiento de nuestra identidad cultural desde 1999.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center animate-[slideUp_0.8s_ease-out_0.4s_both]">
@@ -294,6 +295,74 @@ export default function AsproinpalWebsite() {
         </div>
       </section>
 
+      {/* Embajadores Section */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-gray-800 mb-4">
+                Conoce a Nuestros <span className="bg-gradient-to-r from-yellow-600 via-green-600 to-blue-600 bg-clip-text text-transparent">Embajadores</span>
+              </h2>
+              <div className="w-32 h-1.5 bg-gradient-to-r from-yellow-600 via-green-600 to-blue-600 mx-auto rounded-full mb-6"></div>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Líderes comunitarios, artistas y profesionales que dedican su pasión a amplificar la voz de nuestras comunidades
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              {[
+                {
+                  nombre: "María Fernanda",
+                  rol: "Cultura & Artesanías",
+                  imagen: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop",
+                  descripcion: "Lidera programas de rescate de tradiciones ancestrales"
+                },
+                {
+                  nombre: "Carlos Andrés",
+                  rol: "Agricultura Sostenible",
+                  imagen: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
+                  descripcion: "Especialista en permacultura y agricultura orgánica"
+                },
+                {
+                  nombre: "Ana Lucía",
+                  rol: "Juventud Rural",
+                  imagen: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
+                  descripcion: "Inspira a jóvenes a valorar y transformar el campo"
+                }
+              ].map((embajador, index) => (
+                <div key={index} className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-3 transition-all duration-500">
+                  <div className="relative h-64 overflow-hidden">
+                    <img 
+                      src={embajador.imagen} 
+                      alt={embajador.nombre}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 text-white">
+                      <h3 className="text-xl font-bold mb-1">{embajador.nombre}</h3>
+                      <p className="text-yellow-300 text-sm font-semibold">{embajador.rol}</p>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <p className="text-gray-600 text-sm">{embajador.descripcion}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center">
+              <a 
+                href="/embajadores" 
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500 via-green-600 to-blue-600 text-white px-12 py-5 rounded-full font-bold text-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              >
+                Ver Todos los Embajadores
+                <ChevronRight className="group-hover:translate-x-2 transition-transform" size={28} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-green-600 via-blue-600 to-green-600 animate-[gradientShift_6s_ease-in-out_infinite]"></div>
@@ -339,9 +408,9 @@ export default function AsproinpalWebsite() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 {[
-                  { icon: Phone, title: "Teléfono", info: "3006433704", color: "green" },
-                  { icon: Mail, title: "Email", info: "asproinpal2@hotmail.com", color: "blue" },
-                  { icon: MapPin, title: "Ubicación", info: "Palmito, Sucre", color: "green" }
+                  { icon: Phone, title: "Teléfono", info: "+57 XXX XXX XXXX", color: "green" },
+                  { icon: Mail, title: "Email", info: "contacto@asproinpal.org", color: "blue" },
+                  { icon: MapPin, title: "Ubicación", info: "Región Andina, Colombia", color: "green" }
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
