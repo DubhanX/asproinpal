@@ -408,9 +408,9 @@ export default function AsproinpalWebsite() {
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 {[
-                  { icon: Phone, title: "Teléfono", info: "+57 XXX XXX XXXX", color: "green" },
-                  { icon: Mail, title: "Email", info: "contacto@asproinpal.org", color: "blue" },
-                  { icon: MapPin, title: "Ubicación", info: "Región Andina, Colombia", color: "green" }
+                  { icon: Phone, title: "Teléfono", info: "+57 3006433704", color: "green" },
+                  { icon: Mail, title: "Email", info: "asproinpal@hotmail.com", color: "blue" },
+                  { icon: MapPin, title: "Ubicación", info: "Palmito, Sucre", color: "green" }
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
